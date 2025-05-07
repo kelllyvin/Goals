@@ -2,6 +2,7 @@ require ("dotenv").config()
 
 const express = require('express')
 const mongoose = require("mongoose");
+const cors = require('cors')
 const app = express()
 const port = 3000
 const goalrouter = require("./Routes/goalrouter")
@@ -10,6 +11,7 @@ const goalrouter = require("./Routes/goalrouter")
 // middleware func
  
  app.use(express.json())// allows server to request bodby from post man
+ app.use(cors())
 
 // Home Route
 app.get('/', (req, res) =>{
