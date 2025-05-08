@@ -4,14 +4,14 @@ const express = require('express')
 const mongoose = require("mongoose");
 const cors = require('cors')
 const app = express()
-const port = 3000
+const port = process.env.PORT || 3000
 const goalrouter = require("./Routes/goalrouter")
 
 
 // middleware func
  
  app.use(express.json())// allows server to request bodby from post man
- app.use(cors())
+ app.use(cors())// allows multiplte persons to be workin on same port
 
 // Home Route
 app.get('/', (req, res) =>{
